@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"image"
 	"log"
 	"net/http"
 	"os"
@@ -55,13 +56,11 @@ func main() {
 					}
 					defer content.Content.Close()
 
-					str := spew.Sdump(content.Content)
-					spew.Dump(content.Content)
-					if str == "" {
-						str = "hoge"
-					}
+					// buf := bytes.NewBuffer(content.Content)
+					img, imgFormat, err := image.Decode(content.Content)
+					spew.Dump(img, imgFormat, err)
 
-					postMessage := linebot.NewTextMessage(str)
+					postMessage := linebot.NewTextMessage("hoge")
 					if _, err = bot.ReplyMessage(event.ReplyToken, postMessage).Do(); err != nil {
 						log.Print(err)
 					}
