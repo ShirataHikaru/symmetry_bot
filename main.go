@@ -12,9 +12,9 @@ import (
 )
 
 var (
-	SECRET_KEY    = os.Getenv("SECRET_KEY")
-	ACCEESS_TOKEN = os.Getenv("ACCEESS_TOKEN")
-	PORT          = os.Getenv("PORT")
+	SECRET_KEY   = os.Getenv("SECRET_KEY")
+	ACCESS_TOKEN = os.Getenv("ACCESS_TOKEN")
+	PORT         = os.Getenv("PORT")
 )
 
 func main() {
@@ -27,7 +27,7 @@ func main() {
 
 	router.POST("/hook", func(c *gin.Context) {
 		client := &http.Client{Timeout: time.Duration(15 * time.Second)}
-		bot, err := linebot.New(SECRET_KEY, ACCEESS_TOKEN, linebot.WithHTTPClient(client))
+		bot, err := linebot.New(SECRET_KEY, ACCESS_TOKEN, linebot.WithHTTPClient(client))
 		if err != nil {
 			fmt.Println(err)
 			return
