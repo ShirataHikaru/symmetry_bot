@@ -38,13 +38,10 @@ func main() {
 			if event.Type == linebot.EventTypeMessage {
 				switch message := event.Message.(type) {
 				case *linebot.TextMessage:
-					source := event.Source
-					if source.Type == linebot.EventSourceTypeRoom {
-						if resMessage := message.Text; resMessage != "" {
-							postMessage := linebot.NewTextMessage(resMessage)
-							if _, err = bot.ReplyMessage(event.ReplyToken, postMessage).Do(); err != nil {
-								log.Print(err)
-							}
+					if resMessage := message.Text; resMessage != "" {
+						postMessage := linebot.NewTextMessage(resMessage)
+						if _, err = bot.ReplyMessage(event.ReplyToken, postMessage).Do(); err != nil {
+							log.Print(err)
 						}
 					}
 				}
