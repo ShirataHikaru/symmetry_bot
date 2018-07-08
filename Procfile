@@ -1,1 +1,1 @@
-web: ./symmetry_bot
+web: symmetry_bot
