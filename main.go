@@ -47,14 +47,15 @@ func main() {
 					}
 
 				case *linebot.ImageMessage:
+					fmt.Println(message.ID)
 					content, err := bot.GetMessageContent(message.ID).Do()
 					if err != nil {
 						fmt.Println("GetMessageContent Error")
 					}
 					defer content.Content.Close()
 
-					str := spew.Sdump(content)
-					spew.Dump(content)
+					str := spew.Sdump(content.Content)
+					spew.Dump(content.Content)
 					if str == "" {
 						str = "hoge"
 					}
