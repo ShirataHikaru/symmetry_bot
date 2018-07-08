@@ -46,7 +46,7 @@ func main() {
 					}
 
 				case *linebot.ImageMessage:
-					content, err := bot.GetMessageContent(message.id).Do()
+					content, err := bot.GetMessageContent(message.ID).Do()
 					if err != nil {
 						fmt.Println("GetMessageContent Error")
 					}
@@ -58,7 +58,6 @@ func main() {
 					}
 
 				}
-
 			}
 		}
 	})
