@@ -33,3 +33,10 @@ root-package = "github.com/ShirataHikaru/symmetry_bot/"
 go-version = "go1.10.3"
 install = [ "./..." ]
 ensure = "true"
+
+[[constraint]]
+  name = "github.com/gin-gonic/gin"
+
+[[constraint]]
+  name = "github.com/line/line-bot-sdk-go/linebot"
+  
