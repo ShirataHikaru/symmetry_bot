@@ -52,7 +52,8 @@ func main() {
 					}
 					defer content.Content.Close()
 
-					postMessage := linebot.NewTextMessage(content)
+					str := fmt.Sprintf("%+v", content)
+					postMessage := linebot.NewTextMessage(str)
 					if _, err = bot.ReplyMessage(event.ReplyToken, postMessage).Do(); err != nil {
 						log.Print(err)
 					}
