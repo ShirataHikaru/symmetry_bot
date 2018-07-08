@@ -54,6 +54,10 @@ func main() {
 					defer content.Content.Close()
 
 					str := spew.Sdump(content)
+					spew.Dump(content)
+					if str == "" {
+						str = "hoge"
+					}
 					postMessage := linebot.NewTextMessage(str)
 					if _, err = bot.ReplyMessage(event.ReplyToken, postMessage).Do(); err != nil {
 						log.Print(err)
