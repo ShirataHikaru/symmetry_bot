@@ -42,12 +42,6 @@
   version = "v1.1.1"
 
 [[projects]]
-  name = "gocv.io/x/gocv"
-  packages = ["."]
-  revision = "0d9b22a6450a7d81761a4b763f58fb99e962ab47"
-  version = "0.14.0"
-
-[[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
@@ -68,6 +62,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "a169b9b1f4bd96e627d433a96817be1d48536acadd90a667ba2a420a655dc4f0"
+  inputs-digest = "72d71c5eb66181d2af06b031c881d45904636d5aa28a5a56d818c5d3ebe00a4b"
   solver-name = "gps-cdcl"
   solver-version = 1
