@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"image"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -57,8 +57,8 @@ func main() {
 					defer content.Content.Close()
 
 					// buf := bytes.NewBuffer(content.Content)
-					img, imgFormat, err := image.Decode(content.Content)
-					spew.Dump(img, imgFormat, err)
+					img, err := ioutil.ReadAll(content.Content)
+					spew.Dump(img, err)
 
 					postMessage := linebot.NewTextMessage("hoge")
 					if _, err = bot.ReplyMessage(event.ReplyToken, postMessage).Do(); err != nil {
