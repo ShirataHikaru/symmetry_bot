@@ -38,5 +38,5 @@ ensure = "true"
   name = "github.com/gin-gonic/gin"
 
 [[constraint]]
-  name = "github.com/line/line-bot-sdk-go/linebot"
+  name = "github.com/line/line-bot-sdk-go"
   
