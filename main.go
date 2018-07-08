@@ -7,6 +7,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/davecgh/go-spew/spew"
 	"github.com/gin-gonic/gin"
 	"github.com/line/line-bot-sdk-go/linebot"
 )
@@ -52,7 +53,7 @@ func main() {
 					}
 					defer content.Content.Close()
 
-					str := fmt.Sprintf("%+v", content.Content)
+					str := spew.Sdump(content)
 					postMessage := linebot.NewTextMessage(str)
 					if _, err = bot.ReplyMessage(event.ReplyToken, postMessage).Do(); err != nil {
 						log.Print(err)

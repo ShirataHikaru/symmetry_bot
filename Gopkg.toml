@@ -39,4 +39,6 @@ ensure = "true"
 
 [[constraint]]
   name = "github.com/line/line-bot-sdk-go"
-  
+
+[[constraint]]
+  name = "github.com/davecgh/go-spew"
