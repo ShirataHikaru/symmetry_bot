@@ -47,6 +47,7 @@ func main() {
 					}
 
 				case *linebot.ImageMessage:
+					fmt.Println("****************************")
 					fmt.Println(message.ID)
 					content, err := bot.GetMessageContent(message.ID).Do()
 					if err != nil {
@@ -59,6 +60,7 @@ func main() {
 					if str == "" {
 						str = "hoge"
 					}
+
 					postMessage := linebot.NewTextMessage(str)
 					if _, err = bot.ReplyMessage(event.ReplyToken, postMessage).Do(); err != nil {
 						log.Print(err)
